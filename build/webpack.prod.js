@@ -1,8 +1,10 @@
 var webpack = require('webpack');
+var extractTextPlugin = require('extract-text-webpack-plugin');
+var CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
   entry: {
-    './dist/build': './app/entry.js'
+    './dist/build': './app/entry.js',
   },
   output: {
     path: './',
@@ -46,7 +48,17 @@ module.exports = {
       compressor: {
         warnings: false
       }
-    })
+    }),
+    // new CompressionPlugin({
+    //         asset: "[path].gz[query]",
+    //         algorithm: "gzip",
+    //         test: /\.js$|\.html$/,
+    //         threshold: 10240,
+    //         minRatio: 0.8
+    //     })
+    // new extractTextPlugin("[name].css"),
+    // 提供公共代码
+    // new webpack.optimize.CommonsChunkPlugin('common.js'),
   ],
 }
 ;

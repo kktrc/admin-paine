@@ -36,10 +36,7 @@ module.exports = {
 			{
 				test: /.jsx?$/,
 				loader: 'babel-loader',
-				exclude: /node_modules/,
-				query: {
-					presets: ['es2015', 'react']
-				}
+				exclude: /node_modules/
 			},
 			{
 				test: /\.scss$/,
@@ -48,7 +45,12 @@ module.exports = {
 			{
 				test: /\.html$/,
 				loader: "file?name=[name].[ext]",
-			}]
+			},
+			{
+	      test: /\.less$/,
+	      loader: 'style!css!less'
+	    }
+			]
 		},
 		plugins: [
 			new webpack.HotModuleReplacementPlugin(),

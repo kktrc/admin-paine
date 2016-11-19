@@ -43,11 +43,6 @@ module.exports = {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
-      new webpack.optimize.UglifyJsPlugin({
-        compressor: {
-          warnings: false
-        }
-      }),
       new OpenBrowserPlugin({url: 'http://localhost:3000'})
     ]
   }
