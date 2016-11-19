@@ -1,22 +1,13 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React,{Component} from 'react';
+import {render} from 'react-dom';
 
-var Test = React.createClass({
+class Test extends Component {
 
-	render: function() {
-		var style={
-			width: '100px',
-			height: '100px',
-			backgroundColor: 'red'
-		};
+	render() {
 		return (
-			<div style={style}>
-				<p>Hello World</p>
-				sdfsd你好sdfs
-				sdf 
-			</div>
+			<div>Hello Boy Haha</div>
 		);
 	}
-});
+}
 
-ReactDOM.render(<Test />,document.getElementById('container'));
+render(<Test />,document.getElementById('container'));
