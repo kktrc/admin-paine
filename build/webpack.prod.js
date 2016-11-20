@@ -4,10 +4,10 @@ var CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
   entry: {
-    './dist/build': './app/entry.js',
+    entry: './app/entry.js'
   },
   output: {
-    path: './',
+    path: './dist',
     publicPath: './',
     filename: '[name].js'
   },
@@ -58,7 +58,10 @@ module.exports = {
     //     })
     // new extractTextPlugin("[name].css"),
     // 提供公共代码
-    // new webpack.optimize.CommonsChunkPlugin('common.js'),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: "vendor",
+    //   minChunks: Infinity
+    // }),
   ],
 }
 ;

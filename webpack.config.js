@@ -8,18 +8,8 @@ var DIST_PATH = path.resolve(ROOT_PATH,'dist');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
-
-	// entry: {
-	// 	'./dist/build': ['./app/entry.js','webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:3000']
-	// },
-
+	
 	entry: './app/entry.js',
-
-	// output: {
-	// 	path: './',
-	// 	publicPath: './',
-	// 	filename: '[name].js'
-	// },
 
 	output: {path: __dirname,filename: 'bundle.js'},
 
