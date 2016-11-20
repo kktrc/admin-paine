@@ -8,7 +8,7 @@ var DIST_PATH = path.resolve(ROOT_PATH,'dist');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
-	
+
 	entry: './app/entry.js',
 
 	output: {path: __dirname,filename: 'bundle.js'},
@@ -37,19 +37,22 @@ module.exports = {
 				loader: "file?name=[name].[ext]",
 			},
 			{
-	      test: /\.less$/,
-	      loader: 'style!css!less'
-	    }
-			]
-		},
-		plugins: [
-			new webpack.HotModuleReplacementPlugin(),
-			new webpack.NoErrorsPlugin(),
-			new webpack.optimize.UglifyJsPlugin({
-				compressor: {
-					warnings: false
-				}
-			}),
-			new OpenBrowserPlugin({url: 'http://localhost:3000'})
+				test: /\.less$/,
+				loader: 'style!css!less'
+			}
 		]
-	}
+	},
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoErrorsPlugin(),
+		new webpack.optimize.UglifyJsPlugin({
+			output: {
+				comments: false, // remove all comments
+			},
+			compress: {
+				warnings: false
+			}
+		}),
+		new OpenBrowserPlugin({url: 'http://localhost:3000'})
+	]
+}
