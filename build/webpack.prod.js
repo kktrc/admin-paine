@@ -12,9 +12,6 @@ module.exports = {
     publicPath: './',
     filename: '[name].js'
   },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
   module: {
     loaders: [
       {
@@ -51,4 +48,7 @@ module.exports = {
       }
     }),
   ],
+  resolve: {
+        extensions: ['', '.js', '.jsx', '.less', '.scss', '.css']
+    }
 };
